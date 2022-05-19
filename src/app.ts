@@ -5,7 +5,7 @@ import cors from "cors";
 
 import { Server } from "socket.io";
 
-import { router } from "./router";
+import { router } from "./routes";
 
 const app = express();
 app.use(cors());

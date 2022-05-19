@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AuthenticateUserController } from "./controller/AuthenticateUserControllers";
+import { AuthenticateUserController } from "./controller/AuthenticateUserController";
 import { CreateMessageController } from "./controller/CreateMessageController";
 import { Get3LastMessagesController } from "./controller/GetLast3MessagesController";
 import { ProfileUserController } from "./controller/ProfileUserController";
