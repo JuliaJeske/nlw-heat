@@ -1,16 +1,8 @@
 import axios from "axios";
 import prismaClient from "../prisma";
 import { sign } from "jsonwebtoken";
+import { User } from "@prisma/client";
 
-/**
- * Receber code(string)
- * Recuperar o access_token no github
- * Recuperar infos do user no github
- * Verificar se o usuario existe no DB
- * ---- SIM = Gera um token
- * ---- NAO = Cria no DB, gera um token
- * Retornar o token com as infos do user
- */
 
 interface IAccessTokenResponse {
   access_token: string;
@@ -23,8 +15,13 @@ interface IUserResponse {
   name: string;
 }
 
+interface IResponse {
+  token: string;
+  user: User;
+}
+
 class AuthenticateUserService {
-  async execute(code: string) {
+  async execute(code: string): Promise<IResponse>  {
     const url = "https://github.com/login/oauth/access_token";
 
     const { data: accessTokenResponse } =
@@ -82,6 +79,7 @@ class AuthenticateUserService {
       }
     );
 
+    const aba = [1,2,3];
     return { token, user };
   }
 }

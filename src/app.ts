@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express from "express";
+import express, { Request, Response } from "express";
 import http from "http";
 import cors from "cors";
 
@@ -26,7 +26,7 @@ app.use(express.json());
 
 app.use(router);
 
-app.get("/github", (request, response) => {
+app.get("/github", (request: Request, response: Response) => {
   response.redirect(
     `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`
   );

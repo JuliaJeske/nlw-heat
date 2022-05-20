@@ -18,10 +18,7 @@ export function ensureAuthenticated(
     });
   }
 
-  //Bearer 8934589345djisdjfk834u25ndsfksdkf
-  // [0] Bearer
-  // [1] 8934589345djisdjfk834u25ndsfksdkf
-
+ 
   const [, token] = authToken.split(" ");
 
   try {
